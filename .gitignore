@@ -175,6 +175,8 @@ celerybeat.pid
 .env
 .venv
 env/
+env-app/
+env-game/
 venv/
 ENV/
 env.bak/
