@@ -9,7 +9,7 @@ python3 main.py
 
 # App Project
 ```sh
-git clone
+git clone https://github.com/PaolaDaft/curso-pip-python.git
 cd app
 python3 -m venv env
 source env/bin/activate
