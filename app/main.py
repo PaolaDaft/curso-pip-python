@@ -11,13 +11,15 @@ def run() :
   charts.generate_pie_chart(contries, percentages)
 
   country = input('Type your country => ')
+  print(country)
 
   result = utils.population_by_country(data, country)
 
   if len(result) > 0 :
     country = result[0] #para tomar la primera lista que me mande, que en si solo deberia mandarme una :v
+    print(country)
     lebels, values = utils.get_population(country)
-    charts.generate_bar_chart(lebels, values)
+    charts.generate_bar_chart(country['Country/Territory'],lebels, values)
   
   # Esto se conoce como modulizar nuestra app y poder reutilizar código desde archivos
   #print(result)
