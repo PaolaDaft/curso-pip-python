@@ -3,7 +3,13 @@ import read_csv
 import charts
 
 def run() :
-  data = read_csv.read_csv('./app/data.csv')
+  data = read_csv.read_csv('data.csv')
+  data = list(filter(lambda item : item['Continent'] == 'South America', data))
+
+  contries = list(map(lambda x : x ['Country/Territory'],data ))
+  percentages = list(map(lambda x : x ['World Population Percentage'], data))
+  charts.generate_pie_chart(contries, percentages)
+
   country = input('Type your country => ')
 
   result = utils.population_by_country(data, country)
@@ -16,16 +22,16 @@ def run() :
   # Esto se conoce como modulizar nuestra app y poder reutilizar código desde archivos
   #print(result)
 
-def run_2 ():
+"""def run_2 ():
   data = read_csv.read_csv('./app/data.csv')
   column = input('Typethe column you want a pie chart => ')
 
   lebels, values = utils.get_column(data, column)
   if len(values) > 0 :
-    charts.generate_pie_chart(lebels, values)
+    charts.generate_pie_chart(lebels, values)"""
 
   
-# Ejecutarllo como scrip y como módulo
+# Ejecutarlo como scrip y como módulo
 if __name__ == '__main__' : 
-  #run()
-  run_2 ()
+  run()
+  #run_2 ()
