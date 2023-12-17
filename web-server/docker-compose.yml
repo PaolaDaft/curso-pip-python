@@ -1,0 +1,12 @@
+services:
+  web-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #automatizando la vinculación de archivos
+    volumes:
+      - .:/app
+      # en el . "Este proyecto" : "Este enlazado diretamente" /app "Hasia la carpeta app que está dentro del contenedor "
+    ports:
+      - '80:80'
+      #Conacetamos el puerto de nuestra maquina con el puedto del contenedor
