@@ -3,4 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    
+    #automatizando la vinculación de archivos
+    volumes:
+      - .:/app
+      # en el . "Este proyecto" : "Este enlazado diretamente" /app "Hasia la carpeta app que está dentro del contenedor "
